@@ -1,0 +1,39 @@
+{
+  "name": "ahp-app",
+  "description": "AHP 다기준 의사결정 분석 SaaS — 연구·논문용",
+  "homepage": "https://ahp-app.dreamitbiz.com",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "deploy": "gh-pages -d dist",
+    "og-image": "node scripts/generate-og-image.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "file-saver": "^2.0.5",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^6.28.0",
+    "recharts": "^2.13.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.0.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.4.1",
+    "gh-pages": "^6.3.0",
+    "jsdom": "^25.0.0",
+    "sharp": "^0.34.5",
+    "typescript": "^6.0.2",
+    "vite": "^7.3.1",
+    "vitest": "^3.1.0"
+  }
+}

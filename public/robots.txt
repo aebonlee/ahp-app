@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ahp-basic.dreamitbiz.com/sitemap.xml

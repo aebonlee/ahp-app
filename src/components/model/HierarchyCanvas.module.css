@@ -1,0 +1,194 @@
+.canvasWrapper {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  min-height: 400px;
+  box-shadow: var(--shadow-sm);
+}
+
+.canvas {
+  position: relative;
+  min-width: 100%;
+}
+
+/* SVG layer */
+.svgLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========== Connection lines (color) ========== */
+.connectionLine {
+  fill: none;
+  stroke: #94a3b8;
+  stroke-width: 1.5;
+}
+
+.connectionLineActive {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 2.5;
+}
+
+.connectionLineAlt {
+  fill: none;
+  stroke: #86efac;
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+  opacity: 0.7;
+}
+
+/* ========== Connection lines (paper/grayscale) ========== */
+.linePaper {
+  fill: none;
+  stroke: #555;
+  stroke-width: 1.5;
+}
+
+.lineActivePaper {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2.5;
+}
+
+.lineAltPaper {
+  fill: none;
+  stroke: #888;
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+}
+
+/* ========== Separator ========== */
+.separatorLine {
+  stroke: #cbd5e1;
+  stroke-width: 1;
+  stroke-dasharray: 6 4;
+}
+
+.separatorPaper {
+  stroke: #aaa;
+  stroke-width: 1;
+  stroke-dasharray: 6 4;
+}
+
+/* ========== Paper mode canvas ========== */
+.paperCanvas {
+  background: #fff;
+  border-color: #ccc;
+  box-shadow: none;
+}
+
+/* ========== Context menu ========== */
+.contextMenu {
+  position: absolute;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  z-index: 100;
+  min-width: 140px;
+  padding: 4px 0;
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 0.82rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background: var(--color-bg);
+}
+
+.menuItemDanger {
+  color: var(--color-danger, #ef4444);
+}
+
+.menuItemDanger:hover {
+  background: #fef2f2;
+}
+
+/* ========== Empty state ========== */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: var(--color-text-secondary);
+  gap: var(--spacing-md);
+}
+
+.emptyState p {
+  font-size: 0.95rem;
+}
+
+.emptyActions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.emptyBtn {
+  padding: 8px 16px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.emptyBtn:hover {
+  border-color: var(--color-primary);
+  background: #eff6ff;
+}
+
+/* ========== Drag & Drop ========== */
+.draggingCanvas {
+  cursor: grabbing;
+}
+
+.ghostNode {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  opacity: 0.85;
+  z-index: 50;
+  pointer-events: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0 8px;
+  box-shadow: var(--shadow-lg);
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ghostCriteria {
+  background: var(--color-primary);
+  color: #fff;
+  border: 1px solid var(--color-primary-dark);
+}
+
+.ghostAlt {
+  background: #dcfce7;
+  color: #166534;
+  border: 1.5px solid #86efac;
+  border-radius: 24px;
+}

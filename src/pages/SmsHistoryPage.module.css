@@ -1,0 +1,103 @@
+.empty {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: var(--spacing-xl) 0;
+  font-size: 0.95rem;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  font-size: 0.9rem;
+}
+
+.successBadge {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.failBadge {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.dateCell {
+  white-space: nowrap;
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+}
+
+.msgCell {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.typeSms {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.typeLms {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.resultSuccess {
+  color: #16a34a;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.resultFail {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: help;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-lg);
+}
+
+.pageBtn {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: var(--color-border-light);
+}
+
+.pageInfo {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  padding: 0 var(--spacing-sm);
+}

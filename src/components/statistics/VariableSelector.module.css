@@ -1,0 +1,441 @@
+.container {
+  max-width: 100%;
+}
+
+.header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: var(--spacing-sm);
+}
+.backBtn:hover {
+  text-decoration: underline;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.helpText {
+  font-size: 0.82rem;
+  color: #5b21b6;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  margin: var(--spacing-sm) 0;
+  line-height: 1.5;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.fieldsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.field {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.fieldLabel {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-bg);
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  transition: background 0.1s;
+}
+.checkItem:hover {
+  background: var(--color-bg);
+}
+.checkItem input {
+  accent-color: var(--color-primary);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.checkItemDisabled {
+  opacity: 0.5;
+}
+
+.checkLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.noVars {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.actions {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
+
+.runBtn {
+  padding: 12px 40px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.runBtn:hover:not(:disabled) {
+  background: var(--color-primary-dark, #4f46e5);
+}
+.runBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.respCount {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-left: 2px;
+}
+
+.hint {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin: var(--spacing-sm) 0 0;
+}
+
+.hintWarn {
+  font-size: 0.82rem;
+  color: #dc2626;
+  margin: var(--spacing-sm) 0 0;
+  font-weight: 600;
+}
+
+/* ── 변수 요약 배지 ── */
+.badgeInfo {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.badgeWarn {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-top: 2px;
+}
+
+/* ── 선택된 변수 미리보기 ── */
+.preview {
+  margin-top: var(--spacing-sm);
+  padding: 10px 12px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+}
+
+.previewWarn {
+  margin-top: var(--spacing-sm);
+  padding: 8px 12px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: #dc2626;
+}
+
+.previewTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.previewStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--color-text);
+}
+.previewStats strong {
+  color: var(--color-primary);
+}
+
+.previewCats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.catTag {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--color-primary-bg);
+  border: 1px solid var(--color-primary-border, #c7d2fe);
+  border-radius: 12px;
+  font-size: 0.78rem;
+  color: var(--color-text);
+}
+.catTag strong {
+  color: var(--color-primary);
+  margin-left: 2px;
+}
+
+.previewMeta {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* 리커트 척도 매핑 */
+.previewLikert {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #bbf7d0;
+}
+
+.likertMap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.likertMapItem {
+  font-size: 0.78rem;
+  color: var(--color-text);
+  padding: 2px 6px;
+  background: var(--color-bg);
+  border-radius: 3px;
+}
+.likertMapItem strong {
+  color: var(--color-primary);
+  margin-right: 2px;
+}
+
+/* ── 데이터 진단 패널 ── */
+.diagnostic {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+}
+
+.diagTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-sm);
+}
+
+.diagOk {
+  font-size: 0.82rem;
+  color: #16a34a;
+  padding: 2px 0 2px 18px;
+  position: relative;
+  line-height: 1.5;
+}
+.diagOk::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.diagWarn {
+  font-size: 0.82rem;
+  color: #dc2626;
+  padding: 2px 0 2px 18px;
+  position: relative;
+  line-height: 1.5;
+}
+.diagWarn::before {
+  content: '\26A0';
+  position: absolute;
+  left: 0;
+}
+
+/* ── 변수 부족 안내 패널 ── */
+.insufficientWrap {
+  background: var(--color-surface);
+  border: 2px solid #fbbf24;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.insufficientIcon {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: var(--spacing-sm);
+}
+
+.insufficientTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #92400e;
+  margin: 0 0 var(--spacing-md);
+}
+
+.insufficientMessages {
+  margin-bottom: var(--spacing-md);
+}
+
+.insufficientMsg {
+  font-size: 0.9rem;
+  color: #dc2626;
+  margin: 4px 0;
+  font-weight: 600;
+}
+
+.insufficientSuggestions {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  text-align: left;
+}
+
+.insufficientSuggestions h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 0 0 var(--spacing-sm);
+}
+
+.insufficientSuggestions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.insufficientSuggestions li {
+  font-size: 0.85rem;
+  color: #1e40af;
+  padding: 3px 0 3px 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.insufficientSuggestions li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+.insufficientAlternatives {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  text-align: left;
+}
+
+.insufficientAlternatives h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin: 0 0 var(--spacing-xs);
+}
+
+.insufficientAltNote {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.insufficientAltItem {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  padding: 4px 0;
+  line-height: 1.5;
+}
+
+.insufficientAltItem strong {
+  color: var(--color-primary);
+}
+
+.insufficientInfo {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+
+.insufficientInfo strong {
+  color: var(--color-text);
+}

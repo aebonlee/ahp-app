@@ -1,0 +1,69 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.section h3 {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.root {
+  background: var(--color-primary);
+  color: #fff;
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+}
+
+.altRoot {
+  background: #e0e0e0;
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+}
+
+.tree {
+  padding-left: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+}
+
+.tree li {
+  margin: var(--spacing-xs) 0;
+}
+
+.nodeLabel {
+  border-left: 3px solid;
+  padding-left: var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.altList {
+  padding-left: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+}
+
+.altList li {
+  margin: var(--spacing-xs) 0;
+}
+
+.altName {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.subAltList {
+  padding-left: var(--spacing-lg);
+}
+
+.subAltList li {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.empty {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  padding: var(--spacing-sm);
+}

@@ -1,0 +1,298 @@
+/* ─── Hero Banner ─── */
+.hero {
+  position: relative;
+  background: var(--hero-gradient);
+  padding: 80px var(--spacing-xl) 60px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+
+.heroTag {
+  position: relative;
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+}
+
+.heroTitle {
+  position: relative;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.heroDesc {
+  position: relative;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ─── Section Common ─── */
+.section {
+  padding: 80px var(--spacing-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionAlt {
+  composes: section;
+  max-width: 100%;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sectionAlt > .sectionContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionTag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.sectionText {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: var(--line-height-relaxed);
+  margin-bottom: 16px;
+}
+
+/* ─── Concept Grid ─── */
+.conceptGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: 32px;
+}
+
+.conceptCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.conceptCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-brand), var(--color-brand));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.conceptCard:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 8px 32px rgba(0, 70, 200, 0.06);
+  transform: translateY(-4px);
+}
+
+.conceptCard:hover::after {
+  transform: scaleX(1);
+}
+
+.conceptIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f0f4fa;
+  color: var(--color-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.conceptTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.conceptDesc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ─── Concept Card Colors (nth-child) ─── */
+/* 1 — Blue (AB: 쌍대비교) */
+.conceptCard:nth-child(1) .conceptIcon { background: #eff6ff; color: var(--color-brand); }
+.conceptCard:nth-child(1)::after { background: linear-gradient(90deg, var(--color-brand), #3b82f6); }
+.conceptCard:nth-child(1):hover { border-color: #bfdbfe; }
+
+/* 2 — Violet (CR: 일관성) */
+.conceptCard:nth-child(2) .conceptIcon { background: #f5f3ff; color: #7c3aed; }
+.conceptCard:nth-child(2)::after { background: linear-gradient(90deg, #7c3aed, #8b5cf6); }
+.conceptCard:nth-child(2):hover { border-color: #ddd6fe; }
+
+/* 3 — Teal (EV: 고유벡터) */
+.conceptCard:nth-child(3) .conceptIcon { background: #ecfeff; color: #0891b2; }
+.conceptCard:nth-child(3)::after { background: linear-gradient(90deg, #0891b2, #06b6d4); }
+.conceptCard:nth-child(3):hover { border-color: #a5f3fc; }
+
+/* 4 — Emerald (GM: 기하평균) */
+.conceptCard:nth-child(4) .conceptIcon { background: #ecfdf5; color: #059669; }
+.conceptCard:nth-child(4)::after { background: linear-gradient(90deg, #059669, #10b981); }
+.conceptCard:nth-child(4):hover { border-color: #a7f3d0; }
+
+/* ─── Platform Features ─── */
+.platformGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  margin-top: 32px;
+}
+
+.platformItem {
+  text-align: center;
+  padding: 28px 20px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 200ms;
+}
+
+.platformItem:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 4px 16px rgba(0, 70, 200, 0.05);
+}
+
+.platformIcon {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: var(--color-brand);
+}
+
+.platformTitle {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.platformDesc {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Platform item colors */
+.platformItem:nth-child(1) .platformIcon { color: var(--color-brand); }
+.platformItem:nth-child(1):hover { border-color: #bfdbfe; }
+.platformItem:nth-child(2) .platformIcon { color: #7c3aed; }
+.platformItem:nth-child(2):hover { border-color: #ddd6fe; }
+.platformItem:nth-child(3) .platformIcon { color: #0891b2; }
+.platformItem:nth-child(3):hover { border-color: #a5f3fc; }
+
+/* ─── CTA ─── */
+.cta {
+  padding: 80px var(--spacing-xl);
+  text-align: center;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.ctaDesc {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 32px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-brand);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba(0, 70, 200, 0.15);
+}
+
+.ctaBtn:hover {
+  background: var(--color-brand-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 70, 200, 0.25);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .hero { padding: 60px var(--spacing-md) 40px; }
+  .heroTitle { font-size: 1.8rem; }
+  .sectionTitle { font-size: 1.4rem; }
+  .conceptGrid { grid-template-columns: 1fr; }
+  .platformGrid { grid-template-columns: 1fr; }
+  .ctaTitle { font-size: 1.5rem; }
+}

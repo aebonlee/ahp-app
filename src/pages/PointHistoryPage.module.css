@@ -1,0 +1,169 @@
+/* ─── Hero Banner ─── */
+.banner {
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(30, 64, 175, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-surface) 50%, var(--color-dark) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
+  color: #fff;
+}
+
+.bannerTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.bannerDesc {
+  font-size: 0.95rem;
+  opacity: 0.6;
+}
+
+/* ─── Table ─── */
+.tableWrap {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.table th,
+.table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.table th {
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: var(--color-bg);
+}
+
+.table td {
+  color: var(--color-text);
+}
+
+.table tbody tr:hover {
+  background: var(--color-bg);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ─── Type Badge ─── */
+.typeBadge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--radius-round);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.typeBadge[data-type="earn"] {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.typeBadge[data-type="withdraw"] {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.typeBadge[data-type="withdraw_refund"] {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.typeBadge[data-type="convert"] {
+  background: #faf5ff;
+  color: #7c3aed;
+}
+
+/* ─── Amount ─── */
+.positive {
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.negative {
+  color: var(--color-danger);
+  font-weight: 700;
+}
+
+/* ─── Pagination ─── */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.pageBtn {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pageBtn:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ─── Empty ─── */
+.empty {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+  }
+
+  .bannerTitle {
+    font-size: 1.3rem;
+  }
+
+  .table {
+    font-size: 0.78rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 10px;
+  }
+}

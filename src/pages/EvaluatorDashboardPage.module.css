@@ -1,0 +1,268 @@
+/* ─── Hero Banner ─── */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(30, 64, 175, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-surface) 50%, var(--color-dark) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.bannerContent {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.bannerTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.bannerDesc {
+  font-size: 0.95rem;
+  opacity: 0.6;
+}
+
+.bannerPoints {
+  position: relative;
+  z-index: 1;
+  text-align: right;
+}
+
+.pointsValue {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.pointsLabel {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+/* ─── Quick Actions ─── */
+.quickActions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.quickAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.quickAction:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.quickActionIcon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  font-size: 1.3rem;
+}
+
+.quickActionLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ─── Sections ─── */
+.sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.sectionTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.sectionLink {
+  font-size: 0.82rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sectionLink:hover {
+  text-decoration: underline;
+}
+
+/* ─── Marketplace Card ─── */
+.marketCard {
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--transition-fast);
+}
+
+.marketCard:last-child {
+  margin-bottom: 0;
+}
+
+.marketCard:hover {
+  border-color: var(--color-primary-light);
+}
+
+.marketCardTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.marketCardDesc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.marketCardMeta {
+  display: flex;
+  gap: var(--spacing-md);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.rewardBadge {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.marketCardAction {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ─── Activity List ─── */
+.activityItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: 0.85rem;
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.activityDesc {
+  color: var(--color-text);
+}
+
+.activityAmount {
+  font-weight: 700;
+}
+
+.activityAmount[data-positive="true"] {
+  color: var(--color-success);
+}
+
+.activityAmount[data-positive="false"] {
+  color: var(--color-danger);
+}
+
+.activityDate {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-left: var(--spacing-sm);
+}
+
+/* ─── Empty ─── */
+.emptySection {
+  text-align: center;
+  padding: var(--spacing-lg);
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+    padding: var(--spacing-lg);
+  }
+
+  .bannerPoints {
+    text-align: left;
+  }
+
+  .pointsValue {
+    font-size: 1.5rem;
+  }
+
+  .quickActions {
+    grid-template-columns: 1fr;
+  }
+
+  .sections {
+    grid-template-columns: 1fr;
+  }
+}

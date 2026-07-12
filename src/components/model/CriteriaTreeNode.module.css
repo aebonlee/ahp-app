@@ -1,0 +1,79 @@
+.nodeGroup {
+  margin: var(--spacing-xs) 0;
+}
+
+.node {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all var(--transition-fast);
+  background: var(--color-surface);
+}
+
+.node:hover {
+  background: var(--color-bg);
+}
+
+.node.selected {
+  background: rgba(0, 102, 204, 0.08);
+  border-color: var(--color-primary);
+}
+
+.name {
+  font-weight: 500;
+}
+
+.method {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  padding: 1px 6px;
+  border-radius: var(--radius-round);
+}
+
+.actions {
+  display: flex;
+  gap: 2px;
+  margin-left: var(--spacing-xs);
+}
+
+.actions button {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.actions button:hover {
+  background: var(--color-border);
+  color: var(--color-text);
+}
+
+.deleteBtn:hover {
+  color: var(--color-danger) !important;
+}
+
+.desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-left: var(--spacing-lg);
+  margin-top: 1px;
+}
+
+.children {
+  padding-left: var(--spacing-lg);
+  border-left: 1px dashed var(--color-border);
+  margin-left: var(--spacing-sm);
+}

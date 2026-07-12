@@ -1,0 +1,430 @@
+/* ─── 상단 상태 바 ─── */
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  margin-bottom: var(--spacing-md);
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border-light, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+}
+
+.statusInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.statusStats {
+  font-size: 0.88rem;
+  color: var(--color-text-muted, #6b7280);
+  font-weight: 500;
+}
+
+.statusActions {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .statusBar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .statusInfo {
+    justify-content: center;
+  }
+
+  .statusActions {
+    justify-content: center;
+  }
+}
+
+/* ─── 보상/모집 설정 ─── */
+.rewardRow {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.rewardField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rewardLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.rewardInput {
+  width: 140px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+}
+
+.rewardInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.15);
+}
+
+.rewardHint {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.recruitToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.recruitToggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+
+/* ─── 모집 공고 텍스트 ─── */
+.recruitDescWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-light, #e5e7eb);
+}
+
+.recruitDesc {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.recruitDesc:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.15);
+}
+
+/* ─── 저장 버튼 ─── */
+.saveRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-light, #e5e7eb);
+}
+
+.saveBtn {
+  padding: 8px 24px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary, #3b82f6);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: var(--color-primary-hover, #2563eb);
+}
+
+.saveBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .rewardRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.listHeaderActions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+/* ─── 카드 그리드 ─── */
+.evaluatorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .evaluatorGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.evaluatorCard {
+  border: 1px solid var(--color-border-light, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+  padding: 16px;
+  background: var(--color-surface, #fff);
+  transition: box-shadow 0.2s ease;
+}
+
+.evaluatorCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 카드 헤더 */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cardName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text, #111827);
+}
+
+/* 구분 배지 */
+.badgePublic {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  background: var(--color-primary-surface);
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badgeAdmin {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  background: var(--color-bg, #f3f4f6);
+  color: var(--color-text-muted, #6b7280);
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* 카드 정보 */
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.cardInfoRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.cardLabel {
+  color: var(--color-text-muted, #6b7280);
+  min-width: 52px;
+  flex-shrink: 0;
+}
+
+.cardValue {
+  color: var(--color-text, #111827);
+  word-break: break-all;
+}
+
+/* 진행률 */
+.cardProgress {
+  margin-bottom: 12px;
+}
+
+.progressBar {
+  height: 8px;
+  background: var(--color-border-light, #e5e7eb);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: var(--color-primary, #3b82f6);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progressMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progressPct {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.statusDone {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.statusPending {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #6b7280);
+}
+
+/* 카드 액션 */
+.cardActions {
+  display: flex;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-light, #e5e7eb);
+}
+
+/* ─── Pagination ─── */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: var(--spacing-md);
+}
+
+.pageBtn {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pageBtn:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageBtnActive {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.pageBtnActive:hover {
+  background: var(--color-primary-hover, var(--color-primary));
+  color: #fff;
+}
+
+/* ─── 검색/필터 바 ─── */
+.searchBar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-light, #e5e7eb);
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.15);
+}
+
+.filterSelect {
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  background: var(--color-surface, #fff);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.15);
+}
+
+.searchMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+  .searchBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterSelect {
+    width: 100%;
+  }
+}

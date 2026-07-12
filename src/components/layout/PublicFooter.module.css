@@ -1,0 +1,181 @@
+/* ============================================
+   PublicFooter — www.dreamitbiz.com 스타일
+   ============================================ */
+
+.footer {
+  background: linear-gradient(180deg, var(--color-dark) 0%, #0A0F1A 100%);
+  color: #fff;
+  padding: 48px 0 24px;
+  margin-top: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.3fr;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+/* ── 브랜드 + 회사 정보 ── */
+.brandTitle {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.brandMark {
+  color: #93C5FD;
+}
+
+.brandText {
+  color: #fff;
+}
+
+.brandTagline {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+.companyInfo {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.companyInfo p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+
+.companyInfo p strong {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* ── 바로가기 ── */
+.footerLinks h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.footerLinks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 2;
+  column-gap: 28px;
+}
+
+.footerLinks li {
+  margin-bottom: 6px;
+  break-inside: avoid;
+}
+
+.footerLinks a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.footerLinks a:hover {
+  color: #93C5FD;
+}
+
+/* ── 연락처 ── */
+.footerContact h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.footerContact p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.businessHours {
+  font-style: italic;
+}
+
+/* ── Family Site ── */
+.footerFamily {
+  margin-top: 12px;
+}
+
+.footerFamily select {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  appearance: auto;
+}
+
+.footerFamily select:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.footerFamily select option {
+  background: #1f2937;
+  color: var(--color-text-light);
+}
+
+/* ── 하단 저작권 ── */
+.footerBottom {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .footerContent {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footerBrand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 32px 0 20px;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footerLinks ul {
+    columns: 2;
+    column-gap: 20px;
+  }
+}

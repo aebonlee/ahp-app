@@ -1,0 +1,232 @@
+:root {
+  /* ─── Brand: Dark Blue Identity ─── */
+  --color-primary: #0f2b5b;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #0a1f42;
+  --color-primary-hover: #1a3f7a;
+  --color-primary-bg: #f0f4fa;
+  --color-primary-surface: #dbeafe;
+
+  /* Accent: Warm Amber */
+  --color-accent: #f59e0b;
+  --color-accent-light: #fbbf24;
+  --color-accent-dark: #d97706;
+  --color-accent-bg: #fffbeb;
+
+  /* Pairwise comparison */
+  --color-pairwise-left: #0f2b5b;
+  --color-pairwise-right: #f97316;
+  --color-pairwise-selected: rgba(15, 43, 91, 0.18);
+  --color-pairwise-selected-border: #0a1f42;
+  --color-pairwise-equal: #eff6ff;
+
+  /* Results / Level colors */
+  --color-priority-bar: #0f2b5b;
+  --color-level-1: #0f2b5b;
+  --color-level-2: #0891b2;
+  --color-level-3: #d97706;
+  --color-level-4: #e11d48;
+  --color-level-5: #059669;
+
+  /* Status colors */
+  --color-creating: #94a3b8;
+  --color-waiting: #f59e0b;
+  --color-evaluating: #10b981;
+  --color-completed: #0f2b5b;
+  --color-danger: #e11d48;
+  --color-success: #059669;
+  --color-warning: #f59e0b;
+
+  /* ─── Feature Colors (AHP Workflow) ─── */
+  --color-feature-1: #2563eb;  --color-feature-1-bg: #eff6ff;  --color-feature-1-light: #3b82f6;
+  --color-feature-2: #7c3aed;  --color-feature-2-bg: #f5f3ff;  --color-feature-2-light: #8b5cf6;
+  --color-feature-3: #0891b2;  --color-feature-3-bg: #ecfeff;  --color-feature-3-light: #06b6d4;
+  --color-feature-4: #059669;  --color-feature-4-bg: #ecfdf5;  --color-feature-4-light: #10b981;
+
+  /* ─── Public Page Brand ─── */
+  --color-brand: #0046C8;
+  --color-brand-dark: #002E8A;
+
+  /* ─── Hero Gradient (all public pages) ─── */
+  --hero-gradient: linear-gradient(135deg, #1e40af 0%, #1a3590 50%, #0f2b5b 100%);
+
+  /* Error */
+  --color-error: #dc2626;
+  --color-error-bg: #fef2f2;
+  --color-error-text: #b91c1c;
+  --color-error-border: #fecaca;
+
+  /* Warning */
+  --color-warning-bg: #fffbeb;
+  --color-warning-text: #92400e;
+  --color-warning-border: #fde68a;
+
+  /* Success */
+  --color-success-bg: #ecfdf5;
+  --color-success-text: #065f46;
+  --color-success-border: #a7f3d0;
+
+  /* Info */
+  --color-info-bg: #e8f4fd;
+  --color-info-text: #1a6fa8;
+  --color-info-border: #93c5fd;
+
+  /* ─── UI Foundation ─── */
+  --color-bg: #f8fafc;
+  --color-bg-alt: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-light: #f0f4fa;
+  --color-text: #0f172a;
+  --color-text-light: #475569;
+  --color-text-muted: #64748b;
+
+  /* Dark surface (navbar, footer, hero) */
+  --color-dark: #0f2b5b;
+  --color-dark-surface: #0d2347;
+  --color-dark-border: #1e3a6e;
+
+  /* Mode switch */
+  --color-mode-switch: #f59e0b;
+
+  /* Cell sizes */
+  --cell-size-desktop: 38px;
+  --cell-size-mobile: 24px;
+  --label-width-desktop: 240px;
+  --label-width-mobile: 110px;
+
+  /* ─── Spacing ─── */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* ─── Border radius ─── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-round: 50px;
+
+  /* ─── Shadows (cool-tinted) ─── */
+  --shadow-xs: 0 1px 2px rgba(15, 43, 91, 0.05);
+  --shadow-sm: 0 1px 3px rgba(15, 43, 91, 0.08), 0 1px 2px rgba(15, 43, 91, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 43, 91, 0.08), 0 2px 4px rgba(15, 43, 91, 0.04);
+  --shadow-lg: 0 12px 32px rgba(15, 43, 91, 0.10), 0 4px 8px rgba(15, 43, 91, 0.04);
+  --shadow-xl: 0 20px 48px rgba(15, 43, 91, 0.12);
+  --shadow-violet: 0 4px 14px rgba(15, 43, 91, 0.15);
+  --shadow-violet-lg: 0 8px 24px rgba(15, 43, 91, 0.20);
+
+  /* ─── Line height ─── */
+  --line-height-tight: 1.35;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+
+  /* ─── Font ─── */
+  --font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* ─── Transitions ─── */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ─── Breakpoints (reference) ─── */
+  --breakpoint-mobile: 768px;
+}
+
+/* ─── Color Schemes ─── */
+[data-color-scheme="indigo"] {
+  --hero-gradient: linear-gradient(135deg, #6366f1 0%, #4338ca 50%, #312e81 100%);
+  --color-brand: #4338ca;
+  --color-brand-dark: #312e81;
+}
+
+[data-color-scheme="teal"] {
+  --hero-gradient: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0c4a6e 100%);
+  --color-brand: #0284c7;
+  --color-brand-dark: #0c4a6e;
+}
+
+[data-color-scheme="green"] {
+  --hero-gradient: linear-gradient(135deg, #10b981 0%, #059669 50%, #064e3b 100%);
+  --color-brand: #059669;
+  --color-brand-dark: #064e3b;
+}
+
+[data-color-scheme="purple"] {
+  --hero-gradient: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 50%, #4c1d95 100%);
+  --color-brand: #6d28d9;
+  --color-brand-dark: #4c1d95;
+}
+
+/* ─── Dark Theme ─── */
+[data-theme="dark"] {
+  --color-primary: #60a5fa;
+  --color-primary-light: #93c5fd;
+  --color-primary-dark: #3b82f6;
+  --color-primary-hover: #3b82f6;
+  --color-primary-bg: rgba(30, 64, 175, 0.15);
+  --color-primary-surface: rgba(30, 64, 175, 0.2);
+
+  --color-accent-bg: rgba(245, 158, 11, 0.1);
+
+  --color-pairwise-selected: rgba(96, 165, 250, 0.2);
+  --color-pairwise-selected-border: #60a5fa;
+  --color-pairwise-equal: rgba(96, 165, 250, 0.1);
+
+  --color-bg: #0f172a;
+  --color-bg-alt: #1e293b;
+  --color-surface: #1e293b;
+  --color-border: #334155;
+  --color-border-light: #1e293b;
+  --color-text: #f1f5f9;
+  --color-text-light: #94a3b8;
+  --color-text-muted: #64748b;
+
+  --color-dark: #0a1428;
+  --color-dark-surface: #0f1d36;
+  --color-dark-border: #1e3050;
+
+  /* Feature Colors (Dark) */
+  --color-feature-1: #60a5fa;  --color-feature-1-bg: rgba(37, 99, 235, 0.15);  --color-feature-1-light: #93c5fd;
+  --color-feature-2: #a78bfa;  --color-feature-2-bg: rgba(124, 58, 237, 0.15);  --color-feature-2-light: #c4b5fd;
+  --color-feature-3: #22d3ee;  --color-feature-3-bg: rgba(8, 145, 178, 0.15);  --color-feature-3-light: #67e8f9;
+  --color-feature-4: #34d399;  --color-feature-4-bg: rgba(5, 150, 105, 0.15);  --color-feature-4-light: #6ee7b7;
+
+  /* Public Page Brand (Dark) */
+  --color-brand: #60a5fa;
+  --color-brand-dark: #93c5fd;
+
+  /* Error (Dark) */
+  --color-error: #f87171;
+  --color-error-bg: rgba(220, 38, 38, 0.1);
+  --color-error-text: #fca5a5;
+  --color-error-border: rgba(220, 38, 38, 0.3);
+
+  /* Warning (Dark) */
+  --color-warning-bg: rgba(245, 158, 11, 0.1);
+  --color-warning-text: #fcd34d;
+  --color-warning-border: rgba(245, 158, 11, 0.3);
+
+  /* Success (Dark) */
+  --color-success-bg: rgba(5, 150, 105, 0.1);
+  --color-success-text: #6ee7b7;
+  --color-success-border: rgba(5, 150, 105, 0.3);
+
+  /* Info (Dark) */
+  --color-info-bg: rgba(59, 130, 246, 0.1);
+  --color-info-text: #93c5fd;
+  --color-info-border: rgba(59, 130, 246, 0.3);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.5);
+  --shadow-violet: 0 4px 14px rgba(96, 165, 250, 0.15);
+  --shadow-violet-lg: 0 8px 24px rgba(96, 165, 250, 0.2);
+}

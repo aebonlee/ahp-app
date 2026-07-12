@@ -1,0 +1,42 @@
+.evalList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px 24px;
+}
+
+@media (max-width: 1024px) {
+  .evalList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .evalList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.evalRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.evalName {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.evalStatus {
+  font-size: 0.8rem;
+}
+
+.evalStatusDone {
+  composes: evalStatus;
+  color: var(--color-success);
+}
+
+.evalStatusPending {
+  composes: evalStatus;
+  color: var(--color-text-muted);
+}

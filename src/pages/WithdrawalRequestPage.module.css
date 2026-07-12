@@ -1,0 +1,192 @@
+/* ─── Hero Banner ─── */
+.banner {
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(30, 64, 175, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-surface) 50%, var(--color-dark) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
+  color: #fff;
+}
+
+.bannerTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.bannerDesc {
+  font-size: 0.95rem;
+  opacity: 0.6;
+}
+
+/* ─── Layout ─── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+/* ─── Form Card ─── */
+.formCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+}
+
+.formTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.field input {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast);
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.15);
+}
+
+.balanceInfo {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+}
+
+.balanceInfo strong {
+  color: var(--color-primary);
+}
+
+.error {
+  background: #fef2f2;
+  color: var(--color-danger);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  border: 1px solid #fecaca;
+}
+
+/* ─── Request List ─── */
+.listCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+}
+
+.listTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+}
+
+.requestItem {
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.requestItem:last-child {
+  margin-bottom: 0;
+}
+
+.requestHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.requestAmount {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--radius-round);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusBadge[data-status="pending"] {
+  background: var(--color-accent-bg);
+  color: #92400e;
+}
+
+.statusBadge[data-status="approved"] {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.statusBadge[data-status="rejected"] {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.requestMeta {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.requestNote {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  margin-top: var(--spacing-xs);
+  font-style: italic;
+}
+
+.emptyList {
+  text-align: center;
+  padding: var(--spacing-lg);
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+  }
+
+  .bannerTitle {
+    font-size: 1.3rem;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

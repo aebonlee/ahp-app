@@ -1,0 +1,356 @@
+/* ─── Hero Banner ─── */
+.hero {
+  position: relative;
+  background: var(--hero-gradient);
+  padding: 80px var(--spacing-xl) 60px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+
+.heroTag {
+  position: relative;
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+}
+
+.heroTitle {
+  position: relative;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.heroDesc {
+  position: relative;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ─── Steps Section ─── */
+.stepsSection {
+  padding: 80px var(--spacing-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stepItem {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 32px;
+  align-items: start;
+  padding: 40px 0;
+}
+
+.stepItem + .stepItem {
+  border-top: 1px solid #e2e8f0;
+}
+
+.stepBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stepNum {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+  white-space: nowrap;
+}
+
+.stepLine {
+  width: 2px;
+  flex: 1;
+  min-height: 40px;
+  background: linear-gradient(180deg, var(--color-brand) 0%, #e2e8f0 100%);
+  border-radius: 1px;
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.stepDesc {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: var(--line-height-relaxed);
+  margin-bottom: 20px;
+}
+
+/* ─── Detail List ─── */
+.detailList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.detailItem {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+}
+
+.detailLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-brand);
+  white-space: nowrap;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.detailText {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ─── Step Tags ─── */
+.stepFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stepTag {
+  display: inline-block;
+  padding: 5px 14px;
+  background: #f0f4fa;
+  color: var(--color-brand);
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+/* ─── FAQ Section ─── */
+.faqSection {
+  padding: 80px var(--spacing-xl);
+  background: #fff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.faqInner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.faqTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.faqSub {
+  font-size: 1rem;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faqItem {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.faqItem:first-child {
+  border-top: 1px solid #e2e8f0;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 4px;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+  text-align: left;
+  transition: color 200ms;
+}
+
+.faqQuestion:hover {
+  color: var(--color-brand);
+}
+
+.faqChevron {
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faqOpen .faqChevron {
+  transform: rotate(180deg);
+  color: var(--color-brand);
+}
+
+.faqAnswer {
+  padding: 0 4px 20px;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+/* ─── CTA ─── */
+.cta {
+  padding: 80px var(--spacing-xl);
+  text-align: center;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.ctaDesc {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 32px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-brand);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba(0, 70, 200, 0.15);
+}
+
+.ctaBtn:hover {
+  background: var(--color-brand-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 70, 200, 0.25);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px var(--spacing-md) 40px;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .stepsSection {
+    padding: 40px var(--spacing-md);
+  }
+
+  .stepItem {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 28px 0;
+  }
+
+  .stepBadge {
+    flex-direction: row;
+  }
+
+  .stepLine {
+    width: 24px;
+    height: 2px;
+    min-height: auto;
+    background: linear-gradient(90deg, var(--color-brand) 0%, #e2e8f0 100%);
+  }
+
+  .detailItem {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .detailLabel {
+    min-width: auto;
+  }
+
+  .faqSection {
+    padding: 60px var(--spacing-md);
+  }
+
+  .faqTitle {
+    font-size: 1.5rem;
+  }
+
+  .cta {
+    padding: 60px var(--spacing-md);
+  }
+
+  .ctaTitle {
+    font-size: 1.5rem;
+  }
+}

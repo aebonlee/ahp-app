@@ -1,0 +1,54 @@
+.section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.previewBar {
+  margin-top: var(--spacing-sm);
+  padding: 8px 12px;
+  background: var(--color-bg);
+  border-radius: 6px;
+}
+
+.previewLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.previewRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: 2px;
+}
+
+.previewName {
+  font-size: 0.82rem;
+  min-width: 80px;
+}
+
+.previewTrack {
+  flex: 1;
+  height: 8px;
+  background: var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.previewFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+.previewPct {
+  font-size: 0.8rem;
+  font-family: monospace;
+  min-width: 45px;
+  text-align: right;
+}

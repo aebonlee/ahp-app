@@ -1,0 +1,374 @@
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.legend {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.barList {
+  display: grid;
+  grid-template-columns: 400px 1fr 80px;
+  gap: 6px var(--spacing-md);
+  align-items: center;
+}
+
+.barRow {
+  display: contents;
+}
+
+/* 상위기준 그룹 사이 구분선 */
+.barDivider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: var(--color-border-light);
+  margin: 4px 0;
+}
+
+.barLabel {
+  text-align: right;
+  font-size: 0.88rem;
+  white-space: normal;
+  word-break: keep-all;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+.barLabelTop {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.barLabelSub {
+  font-weight: 400;
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+}
+
+.barTrack {
+  height: 24px;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  min-width: 60px;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: var(--radius-sm);
+  transition: width var(--transition-normal);
+  min-width: 1px;
+}
+
+.barValue {
+  min-width: 76px;
+  text-align: right;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--color-text);
+  white-space: nowrap;
+  background: var(--color-bg, #f9fafb);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.barValueTop {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  border-color: var(--color-primary-light);
+}
+
+/* Table */
+.table {
+  width: 100%;
+  font-size: 0.92rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  background: var(--color-bg);
+}
+
+.failRow {
+  background: var(--color-error-bg);
+}
+
+.passLabel { color: var(--color-success); font-weight: 600; }
+.failLabel { color: var(--color-danger); font-weight: 600; }
+.skip { color: var(--color-text-muted); }
+
+.crBadge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-left: var(--spacing-sm);
+  font-family: var(--font-mono);
+  background: var(--color-bg, #f9fafb);
+  padding: 1px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+/* Detail */
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.resultBlock {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.resultBlock:last-child {
+  border-bottom: none;
+}
+
+.blockTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+/* Signature Panel */
+.signaturePanel {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+.sigProgress {
+  flex: 1;
+  min-width: 0;
+}
+
+.sigProgressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sigProgressLabel {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.sigProgressValue {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+}
+
+.sigProgressBar {
+  height: 8px;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-round);
+  overflow: hidden;
+}
+
+.sigProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark));
+  border-radius: var(--radius-round);
+  transition: width 0.3s ease;
+}
+
+.sigProgressFill[data-complete] {
+  background: linear-gradient(90deg, var(--color-success), var(--color-success));
+}
+
+.sigWarn {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: var(--color-danger);
+  font-weight: 500;
+}
+
+.sigAction {
+  flex-shrink: 0;
+}
+
+.sigComplete {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-success);
+}
+
+.sigCompleteIcon {
+  font-size: 1.3rem;
+}
+
+/* Survey Response View */
+.surveyQA {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.surveyQA:last-child {
+  border-bottom: none;
+}
+
+.surveyQ {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.surveyType {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  padding: 1px 8px;
+  border-radius: var(--radius-round);
+}
+
+.surveyA {
+  font-size: 0.92rem;
+  color: var(--color-text);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-xs);
+  line-height: 1.5;
+}
+
+.surveyNoAnswer {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .barList {
+    grid-template-columns: 250px 1fr 70px;
+  }
+
+  .card {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .signaturePanel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .barList {
+    grid-template-columns: 140px 1fr 60px;
+    gap: 4px var(--spacing-sm);
+  }
+
+  .barLabel {
+    font-size: 0.82rem;
+  }
+
+  .barLabelTop {
+    font-size: 0.88rem;
+  }
+
+  .barValue {
+    min-width: 56px;
+    font-size: 0.82rem;
+    padding: 2px 6px;
+  }
+
+  .barTrack {
+    height: 20px;
+    min-width: 40px;
+  }
+
+  .table {
+    font-size: 0.85rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 6px 8px;
+  }
+
+  .card {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Small phone */
+@media (max-width: 480px) {
+  .barList {
+    grid-template-columns: 1fr;
+    gap: 2px 0;
+  }
+
+  .barLabel {
+    text-align: left;
+  }
+
+  .barValue {
+    text-align: left;
+  }
+}

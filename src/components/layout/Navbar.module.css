@@ -1,0 +1,220 @@
+.navbar {
+  background: var(--color-dark);
+  border-bottom: 1px solid var(--color-dark-border);
+  padding: 0 var(--spacing-lg);
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--spacing-md);
+}
+
+/* ─── Left: Logo + Dashboard ─── */
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  user-select: none;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.logoText {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.homeBtn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3px 10px;
+  border-radius: var(--radius-round);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.homeBtn:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Center: Project Name + DateTime ─── */
+.center {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.projectName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.dateTime {
+  font-weight: 400;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0;
+}
+
+/* ─── Right: Actions ─── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.themeBtn {
+  background: none;
+  border: 1px solid var(--color-dark-border);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.themeBtn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Super Admin badge ─── */
+.saBadge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: var(--radius-round);
+  background: var(--color-danger);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.saBadge:hover {
+  background: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* ─── Role badge (admin in researcher mode) ─── */
+.roleBadge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: var(--radius-round);
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ─── Preview badge (admin in evaluator preview) ─── */
+.previewBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: var(--radius-round);
+  background: var(--color-accent);
+  color: var(--color-dark);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.previewBadge:hover {
+  background: var(--color-accent-light);
+  transform: translateY(-1px);
+}
+
+.userInfo {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.logoutBtn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 5px 14px;
+  border-radius: var(--radius-round);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all var(--transition-fast);
+}
+
+.logoutBtn:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 48px;
+    padding: 0 var(--spacing-md);
+  }
+
+  .projectName {
+    font-size: 0.85rem;
+  }
+
+  .dateTime {
+    display: none;
+  }
+
+  .homeBtn {
+    display: none;
+  }
+
+  .userInfo {
+    display: none;
+  }
+
+  .roleBadge {
+    display: none;
+  }
+
+  .actions {
+    gap: var(--spacing-xs);
+  }
+}

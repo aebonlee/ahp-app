@@ -1,0 +1,609 @@
+/* ── 정보 바 ── */
+.infoBar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-primary-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary-border, #c7d2fe);
+  font-size: 0.88rem;
+  color: var(--color-text);
+  flex-wrap: wrap;
+}
+.infoBar strong {
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+}
+
+/* ── 카드 그리드 ── */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: var(--spacing-lg) var(--spacing-md);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cardIcon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.cardTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.cardDesc {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+/* ── 2열 레이아웃: 왼쪽 가이드 + 오른쪽 변수 선택 ── */
+.configLayout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+/* ── 분석 방법 가이드 박스 (왼쪽) ── */
+.methodGuide {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  position: sticky;
+  top: var(--spacing-lg);
+}
+
+.mgTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-primary-bg);
+}
+
+.mgSection {
+  margin-bottom: var(--spacing-md);
+}
+
+.mgLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 4px;
+}
+
+.mgText {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.mgVarList,
+.mgOutputList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mgVarList li {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  padding: 3px 0 3px 16px;
+  position: relative;
+  line-height: 1.4;
+}
+.mgVarList li::before {
+  content: '\25B6';
+  position: absolute;
+  left: 0;
+  font-size: 0.6rem;
+  color: var(--color-primary);
+  top: 6px;
+}
+.mgVarList li strong {
+  color: var(--color-primary);
+}
+
+.mgOutputList li {
+  font-size: 0.82rem;
+  color: var(--color-text);
+  padding: 2px 0 2px 16px;
+  position: relative;
+  line-height: 1.4;
+}
+.mgOutputList li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--color-success, #10b981);
+  font-size: 0.8rem;
+}
+
+.mgCode {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  color: var(--color-text);
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.mgTip {
+  font-size: 0.82rem;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.5;
+}
+.mgTip strong {
+  color: #d97706;
+  margin-right: 6px;
+}
+
+.mgGuideLink {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background: var(--color-primary-bg);
+  border: 1px solid var(--color-primary-border, #c7d2fe);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+}
+.mgGuideLink:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ── 결과 영역 ── */
+.resultWrap {
+  margin-top: var(--spacing-sm);
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.backBtn {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.backBtn:hover {
+  background: var(--color-bg);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.exportBtn {
+  margin-left: auto;
+  padding: 8px 20px;
+  background: var(--color-success, #10b981);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.exportBtn:hover {
+  background: var(--color-success-dark, #059669);
+}
+
+/* ── 가이드 카드 ── */
+.guideCard {
+  border-style: dashed;
+  background: var(--color-bg);
+}
+
+/* ── 통계 가이드 ── */
+.guideWrap {
+  margin-top: var(--spacing-sm);
+}
+
+.guideHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.guideTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.guideSection {
+  margin-bottom: var(--spacing-xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.guideSectionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-primary-bg);
+}
+
+/* 분석 선택 안내 리스트 */
+.guideList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.guideItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.guideItem:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-bg);
+}
+
+.guideQ {
+  color: var(--color-text);
+  flex: 1;
+}
+
+.guideA {
+  color: var(--color-primary);
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
+/* 가이드 테이블 */
+.guideTableWrap {
+  overflow-x: auto;
+}
+
+.guideTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.guideTable th,
+.guideTable td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border-light);
+  text-align: left;
+}
+
+.guideTable th {
+  background: var(--color-primary-bg);
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.guideTable td {
+  color: var(--color-text);
+}
+
+.guideTable tbody tr:hover {
+  background: var(--color-bg);
+}
+
+/* 체크리스트 */
+.guideChecklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.guideChecklist li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.guideChecklist li::before {
+  content: '\2610';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+}
+
+/* 용어 사전 */
+.guideGlossary {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.glossaryItem {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: 0.88rem;
+}
+
+.glossaryItem:last-child {
+  border-bottom: none;
+}
+
+.glossaryItem dt {
+  font-weight: 700;
+  color: var(--color-primary);
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.glossaryItem dd {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* ── 흐름도 ── */
+.flowChart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.flowStep {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.flowStepLabel {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.flowStepQ {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.flowOptions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flowOptions li {
+  padding: 3px 0 3px 16px;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  position: relative;
+}
+
+.flowOptions li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+/* ── 가이드 소개문 ── */
+.guideIntro {
+  font-size: 0.88rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+}
+
+/* ── 제약사항 참고 사항 ── */
+.constraintNotes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: var(--radius-md);
+}
+
+.constraintNoteItem {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+
+.constraintNoteItem::before {
+  content: '\25B6';
+  position: absolute;
+  left: 0;
+  font-size: 0.6rem;
+  color: #7c3aed;
+  top: 4px;
+}
+
+.constraintNoteItem strong {
+  color: #5b21b6;
+  margin-right: 6px;
+}
+
+/* ── FAQ ── */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.faqItem {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.faqQ {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.faqQ:hover {
+  background: var(--color-primary-bg);
+}
+
+.faqA {
+  padding: 0 var(--spacing-md) var(--spacing-md);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── 빈 상태 ── */
+.emptyMsg {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border);
+}
+
+@media (max-width: 900px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .configLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .methodGuide {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoBar {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .resultHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .exportBtn {
+    margin-left: 0;
+  }
+
+  .guideItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .glossaryItem {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .glossaryItem dt {
+    min-width: unset;
+  }
+}

@@ -1,0 +1,47 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+  cursor: grab;
+  font-size: 0.85rem;
+  transition: background var(--transition-fast);
+}
+
+.item:hover {
+  background: #e8e8e8;
+}
+
+.item:active {
+  cursor: grabbing;
+}
+
+.text {
+  flex: 1;
+  border-left: 2px solid;
+  padding-left: var(--spacing-xs);
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.deleteBtn:hover {
+  color: var(--color-danger);
+}
+
+.editInput {
+  width: 100%;
+  padding: 2px 4px;
+  border: 1px solid var(--color-primary);
+  border-radius: 2px;
+  font-size: 0.85rem;
+}
