@@ -1,0 +1,1 @@
+import{r}from"./vendor-react-3pABPVIs.js";import{b as c,u}from"./index-Cqbqavxu.js";function a(){const t=c(),{fetchProjects:e}=t,{profile:s}=u(),o=s?.role==="superadmin";return r.useEffect(()=>{e({isSuperAdmin:o})},[e,o]),t}function i(t){const e=c(),{fetchProject:s}=e;return r.useEffect(()=>{t&&s(t)},[t,s]),e}export{i as a,a as u};
