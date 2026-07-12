@@ -330,7 +330,7 @@ export default function InviteLandingPage() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
-        <h1 className={styles.brand}>AHP Basic</h1>
+        <h1 className={styles.brand}>AHP App</h1>
 
         {status === 'invalid' && (
           <>

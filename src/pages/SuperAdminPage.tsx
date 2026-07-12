@@ -23,7 +23,7 @@ function formatDate(dateStr) {
 
 const DOMAIN_FILTERS = [
   { value: 'all', label: '전체' },
-  { value: 'ahp-basic.dreamitbiz.com', label: 'AHP Basic' },
+  { value: 'ahp-app.dreamitbiz.com', label: 'AHP App' },
   { value: 'other', label: '기타 사이트' },
 ];
 
@@ -63,12 +63,12 @@ function Pagination({ currentPage, totalPages, onPageChange }: any) {
 
 function UsersTab({ toast }: any) {
   const { users, loading, updateRole } = useSuperAdminUsers();
-  const [domainFilter, setDomainFilter] = useState('ahp-basic.dreamitbiz.com');
+  const [domainFilter, setDomainFilter] = useState('ahp-app.dreamitbiz.com');
   const [currentPage, setCurrentPage] = useState(1);
 
   const filteredUsers = users.filter(u => {
     if (domainFilter === 'all') return true;
-    if (domainFilter === 'other') return u.signup_domain && u.signup_domain !== 'ahp-basic.dreamitbiz.com';
+    if (domainFilter === 'other') return u.signup_domain && u.signup_domain !== 'ahp-app.dreamitbiz.com';
     return u.signup_domain === domainFilter;
   });
 
@@ -134,7 +134,7 @@ function UsersTab({ toast }: any) {
                 <td>{u.email}</td>
                 <td>{u.display_name || '-'}</td>
                 <td>
-                  <span className={styles.domainBadge} data-site={u.signup_domain === 'ahp-basic.dreamitbiz.com' ? 'ahp' : 'other'}>
+                  <span className={styles.domainBadge} data-site={u.signup_domain === 'ahp-app.dreamitbiz.com' ? 'ahp' : 'other'}>
                     {u.signup_domain || '-'}
                   </span>
                 </td>
@@ -695,11 +695,11 @@ const LECTURE_STATUS_STYLES = {
 const LECTURE_SMS_TEMPLATES = [
   {
     name: '일정 확정 안내',
-    content: `[AHP Basic] {이름}님, 온라인 강의 일정이 확정되었습니다.\n\n- 강의: {강의유형}\n- 확정일: {확정일}\n- Zoom 링크: (여기에 링크 입력)\n\n감사합니다.`,
+    content: `[AHP App] {이름}님, 온라인 강의 일정이 확정되었습니다.\n\n- 강의: {강의유형}\n- 확정일: {확정일}\n- Zoom 링크: (여기에 링크 입력)\n\n감사합니다.`,
   },
   {
     name: '강의 리마인드',
-    content: `[AHP Basic] {이름}님, 내일 예정된 온라인 강의를 안내드립니다.\n\n- 강의: {강의유형}\n- 확정일: {확정일}\n- Zoom 링크: (여기에 링크 입력)\n\n시간에 맞춰 참여 부탁드립니다.`,
+    content: `[AHP App] {이름}님, 내일 예정된 온라인 강의를 안내드립니다.\n\n- 강의: {강의유형}\n- 확정일: {확정일}\n- Zoom 링크: (여기에 링크 입력)\n\n시간에 맞춰 참여 부탁드립니다.`,
   },
   {
     name: '자유 입력',
@@ -784,7 +784,7 @@ function LecturesTab({ toast }: any) {
     for (let i = 0; i < targets.length; i++) {
       const app = targets[i];
       const dateStr = app.confirmed_date;
-      const msg = `[AHP Basic] ${app.name}님, 온라인 강의 일정이 확정되었습니다.\n- 강의: ${LECTURE_TYPE_LABELS[app.lecture_type] || app.lecture_type}\n- 확정일: ${dateStr}\n자세한 안내는 별도 연락드리겠습니다.`;
+      const msg = `[AHP App] ${app.name}님, 온라인 강의 일정이 확정되었습니다.\n- 강의: ${LECTURE_TYPE_LABELS[app.lecture_type] || app.lecture_type}\n- 확정일: ${dateStr}\n자세한 안내는 별도 연락드리겠습니다.`;
 
       let smsOk = false;
       try {

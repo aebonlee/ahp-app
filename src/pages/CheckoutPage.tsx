@@ -106,7 +106,7 @@ export default function CheckoutPage() {
       // 2. PortOne 결제 요청
       let paymentResult;
       try {
-        const orderName = `AHP Basic 이용권 ${cartCount}건`;
+        const orderName = `AHP App 이용권 ${cartCount}건`;
         paymentResult = await requestPayment({
           orderId,
           orderName,

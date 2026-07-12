@@ -29,7 +29,7 @@ export default function ForgotPasswordPage() {
     return (
       <div className={styles.page}>
         <div className={styles.card}>
-          <h1 className={styles.title}><Link to="/" className={styles.titleLink}>AHP Basic</Link></h1>
+          <h1 className={styles.title}><Link to="/" className={styles.titleLink}>AHP App</Link></h1>
           <p className={styles.subtitle}>이메일 발송 완료</p>
           <div className={styles.success}>
             비밀번호 재설정 링크가 이메일로 발송되었습니다.<br />
@@ -46,7 +46,7 @@ export default function ForgotPasswordPage() {
   return (
     <div className={styles.page}>
       <div className={styles.card}>
-        <h1 className={styles.title}>AHP Basic</h1>
+        <h1 className={styles.title}>AHP App</h1>
         <p className={styles.subtitle}>비밀번호 재설정</p>
 
         <form onSubmit={handleSubmit} className={styles.form}>

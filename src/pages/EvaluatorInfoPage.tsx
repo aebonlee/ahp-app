@@ -99,7 +99,7 @@ export default function EvaluatorInfoPage() {
             <span className={styles.heroAccent}>보상받으세요</span>
           </h1>
           <p className={styles.heroDesc}>
-            AHP Basic의 다양한 연구 프로젝트에 평가자로 참여하고,
+            AHP App의 다양한 연구 프로젝트에 평가자로 참여하고,
             포인트 적립과 현금 출금 혜택을 받아보세요.
           </p>
           <div className={styles.heroActions}>

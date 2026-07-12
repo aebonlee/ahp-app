@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect, useCallback, useMemo } 
 
 const CartContext = createContext<any>(null);
 
-const STORAGE_KEY = 'ahp_basic_cart';
+const STORAGE_KEY = 'ahp_app_cart';
 
 const loadCart = () => {
   try {

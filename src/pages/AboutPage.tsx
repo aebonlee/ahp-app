@@ -105,9 +105,9 @@ export default function AboutPage() {
       {/* 플랫폼 특징 */}
       <section className={styles.section}>
         <p className={styles.sectionTag}>WHY AHP BASIC</p>
-        <h2 className={styles.sectionTitle}>왜 AHP Basic인가</h2>
+        <h2 className={styles.sectionTitle}>왜 AHP App인가</h2>
         <p className={styles.sectionText}>
-          AHP Basic은 복잡한 AHP 분석을 누구나 쉽게 수행할 수 있도록 설계된 웹 기반 플랫폼입니다.
+          AHP App은 복잡한 AHP 분석을 누구나 쉽게 수행할 수 있도록 설계된 웹 기반 플랫폼입니다.
           별도의 통계 소프트웨어 없이도 전문적인 의사결정 분석이 가능합니다.
         </p>
         <div className={styles.platformGrid}>
@@ -124,7 +124,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className={styles.cta}>
         <h2 className={styles.ctaTitle}>AHP 분석을 시작하세요</h2>
-        <p className={styles.ctaDesc}>체계적 의사결정 분석, AHP Basic과 함께라면 간편합니다.</p>
+        <p className={styles.ctaDesc}>체계적 의사결정 분석, AHP App과 함께라면 간편합니다.</p>
         <button
           className={styles.ctaBtn}
           onClick={() => navigate(isLoggedIn ? '/admin' : '/register')}

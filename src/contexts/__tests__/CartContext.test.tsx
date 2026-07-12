@@ -125,7 +125,7 @@ describe('CartContext', () => {
 
     act(() => result.current.addItem(product1));
 
-    const stored = JSON.parse(sessionStorage.getItem('ahp_basic_cart'));
+    const stored = JSON.parse(sessionStorage.getItem('ahp_app_cart'));
     expect(stored).toHaveLength(1);
     expect(stored[0].id).toBe('p1');
   });

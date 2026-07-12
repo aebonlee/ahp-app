@@ -78,7 +78,7 @@ describe('generateOrderNumber', () => {
 describe('requestPayment', () => {
   const defaultParams = {
     orderId: 'AHP-260314-TEST01',
-    orderName: 'AHP Basic Plan',
+    orderName: 'AHP App Plan',
     totalAmount: 50000,
     payMethod: 'CARD',
     customer: {
@@ -298,7 +298,7 @@ describe('requestPayment', () => {
       expect(capturedParams.buyer_email).toBe('test@test.com');
       expect(capturedParams.buyer_name).toBe('Test User');
       expect(capturedParams.buyer_tel).toBe('010-1234-5678');
-      expect(capturedParams.name).toBe('AHP Basic Plan');
+      expect(capturedParams.name).toBe('AHP App Plan');
       expect(capturedParams.amount).toBe(50000);
     });
 

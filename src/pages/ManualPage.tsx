@@ -99,7 +99,7 @@ const FAQ = [
   },
   {
     q: '무료로 사용할 수 있나요?',
-    a: '네, 현재 AHP Basic의 모든 기능을 무료로 사용할 수 있습니다. 프로젝트 수, 평가자 수, 내보내기 횟수에 제한이 없습니다.',
+    a: '네, 현재 AHP App의 모든 기능을 무료로 사용할 수 있습니다. 프로젝트 수, 평가자 수, 내보내기 횟수에 제한이 없습니다.',
   },
 ];
 
@@ -129,7 +129,7 @@ export default function ManualPage() {
         <span className={styles.heroTag}>Manual</span>
         <h1 className={styles.heroTitle}>사용설명서</h1>
         <p className={styles.heroDesc}>
-          AHP Basic의 모든 기능을 단계별로 안내합니다.<br />
+          AHP App의 모든 기능을 단계별로 안내합니다.<br />
           처음 사용하시는 분도 쉽게 따라할 수 있습니다.
         </p>
       </section>
@@ -167,7 +167,7 @@ export default function ManualPage() {
       <section className={styles.faqSection}>
         <div className={styles.faqInner}>
           <h2 className={styles.faqTitle}>자주 묻는 질문</h2>
-          <p className={styles.faqSub}>AHP Basic 사용에 관한 궁금증을 해결해 드립니다.</p>
+          <p className={styles.faqSub}>AHP App 사용에 관한 궁금증을 해결해 드립니다.</p>
           <div className={styles.faqList}>
             {FAQ.map((item, i) => (
               <FaqItem key={i} item={item} />
@@ -179,7 +179,7 @@ export default function ManualPage() {
       {/* CTA */}
       <section className={styles.cta}>
         <h2 className={styles.ctaTitle}>지금 시작하세요</h2>
-        <p className={styles.ctaDesc}>복잡한 의사결정, AHP Basic과 함께라면 명확해집니다.</p>
+        <p className={styles.ctaDesc}>복잡한 의사결정, AHP App과 함께라면 명확해집니다.</p>
         <button
           className={styles.ctaBtn}
           onClick={() => navigate(isLoggedIn ? '/admin' : '/register')}

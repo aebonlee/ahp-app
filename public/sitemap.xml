@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Home -->
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/</loc>
+    <loc>https://ahp-app.dreamitbiz.com/</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -10,25 +10,25 @@
 
   <!-- Main sections -->
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/about</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/about</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/features</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/features</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/pricing</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/pricing</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/guide</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/guide</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -36,61 +36,61 @@
 
   <!-- Sub-pages -->
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/manual</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/manual</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/learn</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/learn</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/survey-stats</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/survey-stats</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/management</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/management</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/stats-guide</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/stats-guide</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/evaluator-info</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/evaluator-info</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/community</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/community</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/lecture-apply</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/lecture-apply</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/login</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/login</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ahp-basic.dreamitbiz.com/#/signup</loc>
+    <loc>https://ahp-app.dreamitbiz.com/#/signup</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

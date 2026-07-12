@@ -36,7 +36,7 @@ beforeEach(() => {
   vi.clearAllMocks();
   // Set up window.location for getBaseUrl / getRedirectUrl
   Object.defineProperty(window, 'location', {
-    value: { origin: 'https://ahp-basic.dreamitbiz.com', hostname: 'ahp-basic.dreamitbiz.com' },
+    value: { origin: 'https://ahp-app.dreamitbiz.com', hostname: 'ahp-app.dreamitbiz.com' },
     writable: true,
     configurable: true,
   });
@@ -87,7 +87,7 @@ describe('signInWithGoogle', () => {
     expect(result).toEqual(fakeData);
     expect(mockSignInWithOAuth).toHaveBeenCalledWith({
       provider: 'google',
-      options: { redirectTo: 'https://ahp-basic.dreamitbiz.com' },
+      options: { redirectTo: 'https://ahp-app.dreamitbiz.com' },
     });
   });
 
@@ -122,7 +122,7 @@ describe('signInWithKakao', () => {
     expect(result).toEqual(fakeData);
     expect(mockSignInWithOAuth).toHaveBeenCalledWith({
       provider: 'kakao',
-      options: { redirectTo: 'https://ahp-basic.dreamitbiz.com' },
+      options: { redirectTo: 'https://ahp-app.dreamitbiz.com' },
     });
   });
 
@@ -157,8 +157,8 @@ describe('signUp', () => {
       email: 'new@test.com',
       password: 'Pass1234',
       options: {
-        data: { full_name: 'Test User', signup_domain: 'ahp-basic.dreamitbiz.com' },
-        emailRedirectTo: 'https://ahp-basic.dreamitbiz.com/#/login',
+        data: { full_name: 'Test User', signup_domain: 'ahp-app.dreamitbiz.com' },
+        emailRedirectTo: 'https://ahp-app.dreamitbiz.com/#/login',
       },
     });
   });
@@ -199,7 +199,7 @@ describe('resetPassword', () => {
     const result = await resetPassword('user@test.com');
     expect(result).toEqual(fakeData);
     expect(mockResetPasswordForEmail).toHaveBeenCalledWith('user@test.com', {
-      redirectTo: 'https://ahp-basic.dreamitbiz.com/#/login',
+      redirectTo: 'https://ahp-app.dreamitbiz.com/#/login',
     });
   });
 

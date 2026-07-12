@@ -1,5 +1,5 @@
 /**
- * OG Image Generator for AHP Basic
+ * OG Image Generator for AHP App
  *
  * 1200 x 630px 브랜드 이미지를 자동 생성합니다.
  *
@@ -19,7 +19,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT = resolve(__dirname, '..', 'public', 'og-image.png');
 
 const CONFIG = {
-  siteName: 'AHP Basic',
+  siteName: 'AHP App',
   siteNameKo: '의사결정 분석 도구',
   tagline: 'Analytic Hierarchy Process',
   primaryColor: '#0f2b5b',
@@ -74,7 +74,7 @@ function buildSVG(cfg) {
   <rect x="0" y="${height - 6}" width="${width}" height="6" fill="url(#accent)"/>
 
   <text x="${width - 80}" y="${height - 30}" font-family="monospace" font-size="14" fill="rgba(255,255,255,0.5)" text-anchor="end">
-    ahp-basic.dreamitbiz.com
+    ahp-app.dreamitbiz.com
   </text>
 </svg>`;
 }

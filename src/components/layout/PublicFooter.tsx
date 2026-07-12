@@ -25,7 +25,7 @@ export default function PublicFooter() {
             </div>
           </div>
 
-          {/* 바로가기 — AHP Basic 메뉴 */}
+          {/* 바로가기 — AHP App 메뉴 */}
           <div className={styles.footerLinks}>
             <h4>바로가기</h4>
             <ul>

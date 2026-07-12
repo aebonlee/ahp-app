@@ -212,7 +212,7 @@ export default function PricingPage() {
     addItem({
       id: plan.key,
       planType: plan.planType,
-      title: `AHP Basic 이용권 (${plan.name})`,
+      title: `AHP App 이용권 (${plan.name})`,
       price: plan.price,
     });
     toast.success(`${plan.name} 이용권을 장바구니에 담았습니다.`);

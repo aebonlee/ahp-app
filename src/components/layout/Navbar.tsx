@@ -49,7 +49,7 @@ export default function Navbar({ projectName }: any) {
         {/* Left: Logo → 메인페이지 */}
         <div className={styles.logoGroup}>
           <button className={styles.logo} onClick={() => navigate('/')} aria-label="홈으로 이동">
-            <span className={styles.logoText}>AHP Basic</span>
+            <span className={styles.logoText}>AHP App</span>
           </button>
           <button
             className={styles.homeBtn}

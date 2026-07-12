@@ -56,7 +56,7 @@ export default function LoginPage() {
   return (
     <div className={styles.page}>
       <div className={styles.card}>
-        <h1 className={styles.title}><Link to="/" className={styles.titleLink}>AHP Basic</Link></h1>
+        <h1 className={styles.title}><Link to="/" className={styles.titleLink}>AHP App</Link></h1>
         <p className={styles.subtitle}>로그인</p>
 
         {error && <div className={styles.error} role="alert" id="login-error">{error}</div>}

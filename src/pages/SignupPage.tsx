@@ -64,7 +64,7 @@ export default function SignupPage() {
     return (
       <div className={styles.page}>
         <div className={styles.card}>
-          <h1 className={styles.title}><Link to="/" className={styles.titleLink}>AHP Basic</Link></h1>
+          <h1 className={styles.title}><Link to="/" className={styles.titleLink}>AHP App</Link></h1>
           <p className={styles.subtitle}>회원가입 완료</p>
           <p style={{ textAlign: 'center', margin: '16px 0' }}>
             이메일 확인 후 로그인해주세요.
@@ -80,7 +80,7 @@ export default function SignupPage() {
   return (
     <div className={styles.page}>
       <div className={styles.card}>
-        <h1 className={styles.title}>AHP Basic</h1>
+        <h1 className={styles.title}>AHP App</h1>
         <p className={styles.subtitle}>회원가입</p>
 
         <div className={styles.roleToggle}>

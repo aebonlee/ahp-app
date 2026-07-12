@@ -9,13 +9,13 @@ import styles from './LectureApplyPage.module.css';
 const LECTURE_TYPES = [
   {
     key: 'free',
-    title: 'AHP Basic 사용법 소개',
+    title: 'AHP App 사용법 소개',
     subtitle: '무료강의',
     duration: '40분',
     price: '무료',
     curriculum: [
       'AHP 분석 개요 및 기본 원리',
-      'AHP Basic 프로그램 구성 소개',
+      'AHP App 프로그램 구성 소개',
       '프로젝트 생성 및 평가 진행 데모',
       '결과 분석 및 활용 방법',
     ],
@@ -137,7 +137,7 @@ export default function LectureApplyPage() {
 
     // SMS 발송 (실패해도 신청 성공 처리)
     const smsMessage =
-      `[AHP Basic] ${trimmedName}님, 온라인 강의 신청이 접수되었습니다.\n` +
+      `[AHP App] ${trimmedName}님, 온라인 강의 신청이 접수되었습니다.\n` +
       `- 강의: ${lectureLabel}\n` +
       `- 희망일: ${form.preferredDate}\n` +
       `확정 일정은 별도 안내드리겠습니다.`;
@@ -163,7 +163,7 @@ export default function LectureApplyPage() {
           <span className={styles.heroBadge}>온라인 강의</span>
           <h1 className={styles.heroTitle}>온라인 강의 신청</h1>
           <p className={styles.heroDesc}>
-            AHP Basic 활용법을 배울 수 있는 온라인 강의입니다.<br />
+            AHP App 활용법을 배울 수 있는 온라인 강의입니다.<br />
             원하시는 강의를 선택하고 희망 일자를 지정해 주세요.
           </p>
         </div>

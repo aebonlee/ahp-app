@@ -69,7 +69,7 @@ export default function GuidePage() {
       {/* CTA */}
       <section className={styles.cta}>
         <h2 className={styles.ctaTitle}>지금 시작하세요</h2>
-        <p className={styles.ctaDesc}>복잡한 의사결정, AHP Basic과 함께라면 명확해집니다.</p>
+        <p className={styles.ctaDesc}>복잡한 의사결정, AHP App과 함께라면 명확해집니다.</p>
         <button
           className={styles.ctaBtn}
           onClick={() => navigate(isLoggedIn ? '/admin' : '/register')}
