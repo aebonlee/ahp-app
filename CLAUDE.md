@@ -44,18 +44,21 @@ DB 스키마가 적용되어 **동작 가능한 상태**다. 상세: `Dev_md/202
 | 라이브 | ✅ ahp-app.dreamitbiz.com (HTTP 200) |
 | 테스트 | ✅ 412건 |
 
-### 🔴 남은 최우선 과제 — 가입 트리거 하드닝 (플랫폼 전체 위험)
+### ✅ 가입 트리거 하드닝 완료 (2026-07-14)
 
-**ahp-app 문제가 아니라 111개 사이트 전부의 문제다.**
-`auth.users` 트리거 14개 중 **5개가 방어코드 없이 동작한다**
-(`handle_agent_new_user` `instructor_handle_new_user` `ppt_handle_new_user`
- `rest05_handle_new_user` `handle_plan_new_user`).
+`auth.users` 트리거 14개가 **전부 방어코드(EXCEPTION + search_path)를 갖췄다.**
+방어코드 없던 5개(`handle_agent` `instructor_` `ppt_` `rest05_` `handle_plan`)에
+**로직은 그대로 두고 방어코드만 추가**했다.
 
-트리거 중 하나라도 예외를 던지면 `auth.users` INSERT 가 롤백되어 **전 사이트 회원가입이 마비된다.**
-2026-06-19 에 실제로 이 사고가 났다.
+**실측 증명:** `ppt_profiles` 에 `CHECK(false) NOT VALID` 를 걸어 ppt 트리거를 100% 실패시킨 뒤
+가입을 시도했더니 **가입이 성공**했다(고장난 사이트 프로필만 0건, 나머지는 정상).
+→ 이제 트리거 하나가 터져도 **전 사이트 가입 마비가 구조적으로 불가능하다.**
 
-→ `supabase/schema/99_URGENT_signup_trigger_hardening.sql` (ROLLBACK 검증 완료, 멱등)
-   **SQL Editor 에서 적용 후 실제 가입 1건 테스트할 것.** 공유 프로덕션이라 자동 실행하지 않았다.
+원복: `supabase/schema/99b_ROLLBACK_signup_triggers.sql`
+상세: `Dev_md/2026-07-14_가입트리거_하드닝_적용보고서.md`
+
+> **새 사이트의 가입 트리거를 만들 때는 반드시** `SET search_path TO 'public'` +
+> `EXCEPTION WHEN OTHERS THEN RETURN NEW;` 를 넣어라. 빼면 111개 사이트가 같이 죽는다.
 
 ### 초기 데이터 없음
 현재 DB는 비어 있다. 요금제(`ahp_plan_prices`) 등 기준 데이터 투입이 필요하다.
