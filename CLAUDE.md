@@ -60,8 +60,27 @@ DB 스키마가 적용되어 **동작 가능한 상태**다. 상세: `Dev_md/202
 > **새 사이트의 가입 트리거를 만들 때는 반드시** `SET search_path TO 'public'` +
 > `EXCEPTION WHEN OTHERS THEN RETURN NEW;` 를 넣어라. 빼면 111개 사이트가 같이 죽는다.
 
-### 초기 데이터 없음
-현재 DB는 비어 있다. 요금제(`ahp_plan_prices`) 등 기준 데이터 투입이 필요하다.
+### ✅ 요금제 기준 데이터 적용 완료 (2026-07-14)
+
+`ahp_plan_prices` 6종 투입·검증 완료. **이 표는 결제 금액 검증의 서버측 기준이다.**
+`ahp_activate_project_plan` 이 `결제총액 == Σ(plan_prices.price × 수량)` 을 검증하므로,
+표가 비어 있거나 가격이 코드와 어긋나면 **유료 결제가 전부 막힌다.**
+
+| plan_type | 가격 |
+|---|---:|
+| `free` | 0 |
+| `plan_30` | 30,000 |
+| `plan_50` | 40,000 |
+| `plan_100` | 50,000 |
+| `plan_multi_100` | 70,000 |
+| `plan_multi_200` | 100,000 |
+
+> **요금을 바꿀 땐 `src/lib/subscriptionPlans.js` 와 `supabase/schema/04_seed_plan_prices.sql` 을
+> 반드시 함께 고쳐라.** 자동 대조 테스트가 있다: `src/lib/__tests__/planPricesSync.test.js`
+>
+> 가격표 쓰기 권한은 회수돼 있다(authenticated 는 SELECT 만). RLS 정책이 없어 이미 접근
+> 불가지만, 훗날 누가 허용 정책을 실수로 추가하면 로그인 사용자가 가격을 낮춰 쓰고
+> 결제 검증을 통과할 수 있어 권한 자체를 걷었다.
 
 ## 2. DB 규칙 — `ahp_` 접두어
 

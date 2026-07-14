@@ -11,7 +11,7 @@ ahp-basic 의 **살아 있는 프로덕션 스키마를 실측 추출**해 `ahp_
 | `01_tables.sql` | 테이블 24 · 제약 85 · 인덱스 · RLS 활성화 · **FK 교정** | ✅ 적용됨 |
 | `02_functions_policies_grants.sql` | 함수 40 · 정책 110 · **최소권한 GRANT** | ✅ 적용됨 |
 | `03_triggers.sql` | 트리거 4 + **가입 트리거** | ✅ 적용됨 |
-| `04_seed_plan_prices.sql` | **요금제 가격표 기준 데이터** | ⏳ 적용 대기 |
+| `04_seed_plan_prices.sql` | **요금제 가격표 기준 데이터** | ✅ 적용됨(2026-07-14) |
 | `99_URGENT_signup_trigger_hardening.sql` | 가입 트리거 하드닝 | ✅ 적용됨(2026-07-14) |
 | `99b_ROLLBACK_signup_triggers.sql` | 위 항목 원복용 | (비상시) |
 
