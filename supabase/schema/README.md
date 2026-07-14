@@ -11,6 +11,23 @@ ahp-basic 의 **살아 있는 프로덕션 스키마를 실측 추출**해 `ahp_
 | `01_tables.sql` | 테이블 24 · 제약 85 · 인덱스 · RLS 활성화 · **FK 교정** | ✅ 적용됨 |
 | `02_functions_policies_grants.sql` | 함수 40 · 정책 110 · **최소권한 GRANT** | ✅ 적용됨 |
 | `03_triggers.sql` | 트리거 4 + **가입 트리거** | ✅ 적용됨 |
+| `04_seed_plan_prices.sql` | **요금제 가격표 기준 데이터** | ⏳ 적용 대기 |
+| `99_URGENT_signup_trigger_hardening.sql` | 가입 트리거 하드닝 | ✅ 적용됨(2026-07-14) |
+| `99b_ROLLBACK_signup_triggers.sql` | 위 항목 원복용 | (비상시) |
+
+## ⚠️ 요금제 가격표는 장식이 아니다
+
+`ahp_plan_prices` 는 **결제 금액 검증의 서버측 기준**이다.
+`ahp_activate_project_plan` 은 플랜 활성화 전에 이렇게 검증한다:
+
+    결제된 총액 == Σ(ahp_plan_prices.price × 수량)
+
+- **표가 비어 있으면** 기대금액이 0이 되어 **유료 주문이 전부 실패**한다.
+- **가격이 코드와 한 원이라도 다르면** `Price integrity check failed` 로 결제가 막힌다.
+
+→ `src/lib/subscriptionPlans.js` 의 `PLAN_LIMITS[*].price` 와 **반드시 일치**시킬 것.
+   **자동 대조 테스트로 고정돼 있다**: `src/lib/__tests__/planPricesSync.test.js`
+   (요금을 바꿀 땐 코드와 시드 SQL 을 함께 고쳐야 테스트가 통과한다)
 
 ## ahp-basic 대비 교정한 결함 3건
 
