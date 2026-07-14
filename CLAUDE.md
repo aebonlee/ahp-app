@@ -32,32 +32,33 @@
 
 ---
 
-## 1. 🔴 현재 상태 — **DB 스키마 미생성 (프론트만 배포됨)**
+## 1. 현재 상태 — ✅ 스키마 적용 완료 (2026-07-13 실측 검증)
 
-**코드는 완성됐고 빌드·테스트가 통과하지만, `ahp_` 테이블이 아직 DB에 없어서 실제로는 동작하지 않는다.**
+DB 스키마가 적용되어 **동작 가능한 상태**다. 상세: `Dev_md/2026-07-13_ahp-app_구축_점검보고서.md`
 
-### 다음에 할 일 (순서대로)
+| 항목 | 상태 |
+|---|---|
+| `ahp_` 스키마 | ✅ 24테이블 · 44함수 · 110정책 · FK 31 |
+| 익명 비밀컬럼 차단 | ✅ access_code · result_share_token → 42501 |
+| 함수 search_path | ✅ 미고정 0개 |
+| 라이브 | ✅ ahp-app.dreamitbiz.com (HTTP 200) |
+| 테스트 | ✅ 412건 |
 
-1. **`supabase/schema/00_GENERATE_DDL.sql`** 을 Supabase SQL Editor에서 실행한다.
-   → SELECT 문뿐이라 DB를 **전혀 변경하지 않는다**(안전). 현재 살아 있는 스키마의 DDL을 추출한다.
-   → **왜 이렇게 하나:** ahp-basic의 마이그레이션은 39개 파일 3,318줄이 서로를 덮어쓰며 쌓인 구조라,
-     그대로 재생하면 현재 프로덕션 스키마와 달라진다. **살아 있는 스키마를 원본으로 삼아야 한다.**
-2. 그 출력(테이블 정의·제약·인덱스·RLS 정책·RPC 33개·트리거·권한)을 받아
-   **`supabase/schema/01_schema.sql`** 을 작성한다 — 모든 객체에 `ahp_` 접두어를 붙인 버전.
-3. SQL Editor에서 `01_schema.sql` 적용 → 기능 검증 → 배포.
+### 🔴 남은 최우선 과제 — 가입 트리거 하드닝 (플랫폼 전체 위험)
 
-### 스키마 작성 시 반드시 지킬 것
+**ahp-app 문제가 아니라 111개 사이트 전부의 문제다.**
+`auth.users` 트리거 14개 중 **5개가 방어코드 없이 동작한다**
+(`handle_agent_new_user` `instructor_handle_new_user` `ppt_handle_new_user`
+ `rest05_handle_new_user` `handle_plan_new_user`).
 
-- **가입 트리거(`ahp_handle_new_user`)에 `SET search_path = public` + `EXCEPTION WHEN OTHERS` 필수.**
-  2026-06-19에 `search_path` 미고정 핸들러 하나가 **111개 사이트 전체의 회원가입을 마비**시킨 사고가 있었다.
-  `auth.users` 트리거는 모든 사이트가 공유하므로, 여기서 예외가 터지면 전체 가입이 롤백된다.
-- **`pairwise_comparisons`의 `criterion_id`/`row_id`/`col_id`에 FK를 걸 것.**
-  ahp-basic에는 FK가 **없어서**, 평가기준을 수정하면 수집된 평가 데이터가 *존재하지 않는 ID를 가리키는
-  고아 데이터*가 됐다. 에러도 안 나고 행도 남아 있어 **겉보기엔 멀쩡한데 계산만 틀린다.** 이번엔 막는다.
-- **비밀 컬럼은 컬럼 레벨 권한으로 막을 것** (§4 참조).
-- RLS 정책의 `is_project_evaluator` 계열 헬퍼는 **익명 평가자에게 동작하지 않는다** (§3 참조).
+트리거 중 하나라도 예외를 던지면 `auth.users` INSERT 가 롤백되어 **전 사이트 회원가입이 마비된다.**
+2026-06-19 에 실제로 이 사고가 났다.
 
----
+→ `supabase/schema/99_URGENT_signup_trigger_hardening.sql` (ROLLBACK 검증 완료, 멱등)
+   **SQL Editor 에서 적용 후 실제 가입 1건 테스트할 것.** 공유 프로덕션이라 자동 실행하지 않았다.
+
+### 초기 데이터 없음
+현재 DB는 비어 있다. 요금제(`ahp_plan_prices`) 등 기준 데이터 투입이 필요하다.
 
 ## 2. DB 규칙 — `ahp_` 접두어
 
