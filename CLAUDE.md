@@ -1,7 +1,7 @@
 # CLAUDE.md — ahp-app
 
 > **인수인계 문서.** 세션·모델이 바뀌어도 오류 없이 이어가도록 **실측으로 확인한 사실만** 적는다.
-> 최종 갱신: **2026-07-12** (Claude Fable 5)
+> 최종 갱신: **2026-07-13** (Claude Fable 5)
 
 ---
 
@@ -73,14 +73,17 @@ supabase.rpc('ahp_get_project_for_invite')  // ✅
 supabase.from('projects')              // ❌ ahp-basic 것이다. 절대 쓰지 말 것
 ```
 
-### 테이블 19개
+### 테이블 24개
 ```
 ahp_projects  ahp_criteria  ahp_alternatives  ahp_evaluators  ahp_evaluator_groups
 ahp_pairwise_comparisons  ahp_direct_input_values  ahp_evaluation_signatures
 ahp_survey_questions  ahp_survey_responses  ahp_consent_records  ahp_brainstorming_items
 ahp_orders  ahp_order_items  ahp_user_licenses  ahp_user_profiles  ahp_withdrawal_requests
 ahp_sms_logs  ahp_lecture_applications
+ahp_community_posts  ahp_page_views  ahp_plan_prices  ahp_point_transactions  ahp_project_plans
 ```
+> 뒤 5개(`community_posts`~`project_plans`)는 **코드가 직접 `.from()` 하지 않고 RPC로만 접근**한다.
+> 코드 스캔만 하면 놓친다 — 스키마를 만질 땐 RPC 함수 본문까지 봐야 한다.
 > `auth.users`만은 Supabase 내장이라 공유한다(단일 프로젝트 = 단일 인증풀). 그 외는 전부 분리.
 > `ahp_user_profiles`는 AHP 전용 역할·포인트·플랜을 담으므로 **공유 `user_profiles`와 별개다.**
 
